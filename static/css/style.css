@@ -1,0 +1,283 @@
+/* ========================
+   General Page Styling
+======================== */
+body {
+  background: #081c2c;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========================
+   Profile Image & Glow
+======================== */
+img.rounded-circle {
+  border: 4px solid #00f2fe;
+  box-shadow: 0 0 25px #00f2fe;
+}
+.glow-wrapper {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 15px;
+  background: radial-gradient(circle at center, rgba(0, 255, 255, 0.4), transparent 70%);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+}
+.glowing-profile {
+  border-radius: 50%;
+  border: 3px solid #00ffff;
+  max-width: 300px;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+/* ========================
+   Typography & Highlights
+======================== */
+.text-light {
+  color: #00f2fe !important;
+}
+.highlight-intro {
+  color: #00ffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.typing-words {
+  display: flex;
+  flex-wrap: wrap;
+}
+.typing-words .word {
+  opacity: 0;
+  animation: showWord 0.6s forwards;
+}
+.typing-words .word:nth-child(1) { animation-delay: 0s; }
+.typing-words .word:nth-child(2) { animation-delay: 0.6s; }
+.typing-words .word:nth-child(3) { animation-delay: 1.2s; }
+.typing-words .word:nth-child(4) { animation-delay: 1.8s; }
+
+@keyframes showWord {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================
+   Social Icons
+======================== */
+.fab {
+  transition: transform 0.3s ease;
+  color: #00f2fe;
+}
+.fab:hover {
+  transform: scale(1.2);
+  color: #ffffff;
+}
+
+/* ========================
+   Buttons
+======================== */
+.btn-info {
+  background-color: #00f2fe;
+  border: none;
+  color: #000;
+  font-weight: 600;
+}
+.btn-info:hover {
+  background-color: #00d4e0;
+  color: #000;
+}
+
+/* ========================
+   Navbar
+======================== */
+.blur-navbar {
+  background: rgba(13, 17, 23, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* ========================
+   Section Titles
+======================== */
+.section-title-yellow {
+  font-size: 2.5rem;
+  color: #1342a0;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 0 0 5px #ffc10780;
+}
+
+.section-title-blue {
+  font-size: 2.5rem;
+  color: #00f2fe;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+/* Disable glow underline */
+#about .glow-title::after,
+#projects .glow-title::after,
+#contact .glow-title::after {
+  display: none !important;
+}
+
+/* ========================
+   About Section
+======================== */
+.about-section {
+  background-color: #e8dada;
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+}
+.about-box {
+  background-color: rgba(8, 28, 44, 0.8);
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 800px;
+  border-radius: 10px;
+  border-left: 5px solid #00ffff;
+  box-shadow: 0 0 25px #00ffff30;
+  color: white;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px #00ffff60;
+}
+
+/* ========================
+   Skill Cards
+======================== */
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(11, 173, 218, 0.4);
+  border-radius: 15px;
+  padding: 20px;
+  color: #0badda;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(11, 173, 218, 0.2);
+}
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(11, 173, 218, 0.5);
+}
+.skill-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+.skill-card p {
+  margin: 0;
+  font-weight: 500;
+  color: #e0f7fa;
+}
+
+/* ========================
+   Project Cards
+======================== */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(11, 173, 218, 0.4);
+  border-radius: 15px;
+  padding: 20px;
+  color: #0badda;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(11, 173, 218, 0.2);
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(11, 173, 218, 0.5);
+}
+.project-card h4 a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffc107;
+  text-decoration: none;
+}
+.project-card p {
+  font-size: 0.95rem;
+  margin-top: 8px;
+  color: #e0f7fa;
+}
+.project-card .badge {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 4px;
+  display: inline-block;
+}
+
+.project-title-big {
+  font-size: 1.75rem; /* adjust as needed */
+  color: #00f2fe;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+}
+
+/* ========================
+   Contact Card
+======================== */
+.contact-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+}
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* ========================
+   Custom Containers
+======================== */
+.custom-about-skill-style {
+  background-color: rgba(8, 28, 44, 0.8);
+  border: 1px solid #00ffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+.custom-about-skill-style:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  transform: scale(1.01);
+}
+
+/* ========================
+   Arrow Buttons
+======================== */
+.arrow-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.arrow-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* ========================
+   Glow Box (Golden Style)
+======================== */
+.glow-box {
+  background-color: #0a2437;
+  border: 1px solid #ffc10730;
+  border-radius: 12px;
+  padding: 40px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px #ffc10720;
+}
+.glow-box:hover {
+  box-shadow: 0 0 20px #ffc10760;
+  transform: scale(1.01);
+}

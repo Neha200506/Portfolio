@@ -1,0 +1,296 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section id="hero" class="py-5 my-5 text-center text-light" style="background: transparent;">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Profile Image -->
+      <div class="col-md-5 text-center mb-4 mb-md-0" data-aos="fade-up">
+        <div class="glow-wrapper">
+          <img src="{% static 'images/neha-photo.png' %}" alt="Neha Redekar" class="img-fluid glowing-profile rounded-circle" style="max-width: 280px;">
+        </div>
+      </div>
+
+      <!-- Intro Text -->
+      <div class="col-md-7 text-start" data-aos="fade-left">
+        <p class="highlight-intro mb-1">Hello, I'm</p>
+        <h1 class="fw-bold display-5">Neha Redekar</h1>
+        <h4 class="text-info mb-3">and I'm <span id="typing"></span></h4>
+        <p class="mt-2 mb-4">Welcome to my portfolio website! I’m a Web Developer | Coder </p>
+
+        <!-- Social Icons -->
+        <div class="d-flex align-items-center mb-3">
+          <a href="https://github.com/Neha200506" target="_blank" class="me-3 text-info">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/neha-redekar-a7812128a/" target="_blank" class="me-3 text-info">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="mailto:neharedekar20@gmail.com" class="text-info">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
+        </div>
+
+        <!-- Resume Button -->
+        <a href="#" class="btn btn-outline-warning rounded-pill px-4">Download Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Typed.js Script -->
+<script>
+  var typed = new Typed("#typing", {
+    strings: ["a Web Developer", "a Tech Enthusiast"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 2000,
+    loop: true
+  });
+</script>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="py-5 my-5 text-light" style="background-color: #081c2c;">
+  <style>
+    .skill-card i {
+      color: #ffc107; /* golden yellow */
+      font-size: 2rem;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .skill-card:hover i {
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #ffc10780;
+    }
+
+    .skill-card p {
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .skill-card {
+      padding: 20px;
+      border: 1px solid #ffc10730;
+      border-radius: 12px;
+      background-color: #0a2437;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+      box-shadow: 0 0 20px #ffc10740;
+    }
+
+      #skills .glow-title::after {
+    display: none !important;
+  }
+  </style>
+
+  <div class="container text-center">
+    <h2 class="text-info fw-bold mb-4">Skills & Technologies</h2>
+
+    <!-- Programming Languages -->
+    <h5 class="text-light mb-4 mt-5">Programming Languages</h5>
+    <div class="row justify-content-center g-3">
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <p>C++</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="fab fa-python"></i>
+          <p>Python</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="fab fa-java"></i>
+          <p>Java</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="fab fa-html5"></i>
+          <p>HTML & CSS</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="fab fa-js-square"></i>
+          <p>JavaScript (Basics)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frameworks & Tools -->
+    <h5 class="text-light mb-4 mt-5">Frameworks & Tools</h5>
+    <div class="row justify-content-center g-3">
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="fas fa-leaf"></i>
+          <p>Django (Beginner)</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="fab fa-css3-alt"></i>
+          <p>Tailwind CSS</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="fab fa-bootstrap"></i>
+          <p>Bootstrap (Basics)</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="fas fa-code-branch"></i>
+          <p>VS Code, Git, GitHub</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="py-5 my-5 text-light" style="background-color: #081c2c;">
+  <div class="container">
+    <h2 class="section-title-blue text-center mb-4">Projects</h2>
+    
+    <div class="position-relative">
+      <button class="btn btn-outline-info position-absolute start-0 top-50 translate-middle-y z-3 arrow-btn" onclick="scrollProjects(-1)">
+        &lt;
+      </button>
+
+      <div class="d-flex overflow-auto px-5" id="projectsScroll" style="scroll-behavior: smooth; gap: 1rem;">
+        <!-- Project 1 -->
+        <div class="col-lg-5 col-md-6">
+          <div class="p-4 project-card glow-box h-100" style="min-height: 250px;">
+            <h4 class="section-title-blue mb-3">
+              <a href="https://github.com/Neha200506/assignment-monitor" target="_blank" class="text-decoration-none text-info">
+                Assignment Monitoring System
+              </a>
+            </h4>
+            <p>A Django web app that manages assignments, sends real-time email notifications, and stores data in MySQL.</p>
+            <div class="mt-3">
+              <span class="badge bg-info text-dark fw-semibold me-2 mb-2">Django</span>
+              <span class="badge bg-info text-dark fw-semibold me-2 mb-2">MySQL</span>
+              <span class="badge bg-info text-dark fw-semibold me-2 mb-2">SMTP</span>
+              <span class="badge bg-info text-dark fw-semibold me-2 mb-2">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-5 col-md-6">
+          <div class="p-4 project-card glow-box h-100" style="min-height: 250px;">
+            <h4 class="section-title-blue mb-3">
+              <a href="https://github.com/Neha200506/assignment-monitor" target="_blank" class="text-decoration-none text-info">
+                Gesture-Controlled IoT Car
+              </a>
+            </h4>
+            <p>Control a robot car via hand gestures using OpenCV and WiFi, integrating ESP8266 for real-time communication.</p>
+            <div class="mt-3">
+              <span class="badge bg-info text-dark fw-semibold me-2 mb-2">Python</span>
+              <span class="badge bg-info text-dark fw-semibold me-2 mb-2">OpenCV</span>
+              <span class="badge bg-info text-dark fw-semibold me-2 mb-2">MediaPipe</span>
+              <span class="badge bg-info text-dark fw-semibold me-2 mb-2">ESP8266</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-outline-info position-absolute end-0 top-50 translate-middle-y z-3 arrow-btn" onclick="scrollProjects(1)">
+        &gt;
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-5 my-5 text-light" style="background-color: #081c2c;">
+  <div class="container">
+    <h2 class="section-title-blue text-center mb-4">About Me</h2>
+    <div class="about-box glow-box text-center px-4 px-md-5 py-5 mx-auto" style="max-width: 850px;">
+      <p class="fs-5 mb-4">
+        Hello! I'm <strong>Neha Redekar</strong>, a Computer Science Engineering student at <strong>Pimpri Chinchwad University</strong>.
+      </p>
+      <p class="fs-5 mb-4">
+        I’m a curious and passionate web developer with experience in <strong>C++, HTML, CSS</strong>, and learning <strong>Django</strong> & <strong>AI</strong>.
+      </p>
+      <p class="fs-5 mb-4">
+        I love building creative, real-world projects and participating in hackathons to push my limits.
+      </p>
+      <p class="fs-5">
+        I enjoy solving problems, designing interfaces, and writing clean code. Let's build something amazing together!
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-5 text-center text-light" style="background-color: #081c2c;">
+  <div class="container">
+    <h2 class="section-title-blue mb-4">Contact</h2>
+    
+    <div class="contact-card glow-box mx-auto p-4" style="max-width: 600px;">
+      <form action="https://formspree.io/f/xeozoqja" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required class="form-control mb-3 rounded-3 p-2 bg-light text-dark" />
+        <input type="email" name="email" placeholder="Your Email" required class="form-control mb-3 rounded-3 p-2 bg-light text-dark" />
+        <textarea name="message" rows="5" placeholder="Your Message" required class="form-control mb-3 rounded-3 p-2 bg-dark text-light"></textarea>
+        <button type="submit" class="btn btn-info w-100 fw-bold rounded-pill">Send Message</button>
+      </form>
+
+      <!-- Social Icons Below the Form Inside the Box -->
+      <div class="mt-4 d-flex justify-content-center gap-4">
+        <a href="https://github.com/Neha200506" target="_blank" class="text-info fs-4">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/neha-redekar-a7812128a/" target="_blank" class="text-info fs-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Add this style for yellow title and glow-box -->
+<style>
+  .section-title-yellow {
+    color: #ffc107;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ffc10788;
+  }
+
+  .glow-box {
+    background-color: #0a2437;
+    border: 1px solid #ffc10740;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ffc10730;
+    padding: 30px;
+  }
+
+  .about-box,
+  .contact-card,
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .about-box:hover,
+  .contact-card:hover,
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #ffc10760;
+  }
+</style>
+
+<!-- Existing Scripts -->
+<!-- ...Your existing scroll and typing scripts remain unchanged... -->
+{% endblock %}
