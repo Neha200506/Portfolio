@@ -1,3 +1,4 @@
+# Triggering a rebuild on Render
 from django.shortcuts import render
 
 def home(request):
