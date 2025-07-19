@@ -2,7 +2,7 @@ services:
   - type: web
     name: portfolio-site-1
     env: python
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: "pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput"
     startCommand: "gunicorn portfolio.wsgi"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
