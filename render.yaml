@@ -1,18 +1,11 @@
 services:
   - type: web
-    name: myportfolio
+    name: portfolio-site-1
     env: python
-    plan: free
-    buildCommand: |
-      pip install -r requirements.txt
-      python manage.py collectstatic --noinput
-      python manage.py migrate
-    startCommand: gunicorn your_project_name.wsgi:application
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn portfolio.wsgi"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: your_project_name.settings
-      - key: SECRET_KEY
-        generateValue: true
-      - key: DEBUG
-        value: "False"
-      - fromGroup: my-django-env
+        value: portfolio.settings
+      - key: PYTHON_VERSION
+        value: 3.11
