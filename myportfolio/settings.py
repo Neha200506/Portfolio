@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # 🔹 Security
 SECRET_KEY = 'django-insecure-sdu*x10*83q@*)in3ojy3md@*rk!6@tryfz9@*51(f%++kcq(s'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # 🔹 Installed apps
 INSTALLED_APPS = [
@@ -81,9 +81,11 @@ USE_TZ = True
 import os
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+import os
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'portfolio/static')]
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # 🔹 Media files
 MEDIA_URL = '/media/'
